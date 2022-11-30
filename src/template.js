@@ -1,5 +1,11 @@
-function templateFunction(x) {
-  return x / 2;
+function isABomb(x) {
+  let aBomb = false;
+  if (x === "X") {
+    aBomb = true;
+  }
+  return aBomb;
 }
 
-module.exports = templateFunction;
+module.exports = {
+  isABomb,
+};

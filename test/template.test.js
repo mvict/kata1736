@@ -1,7 +1,10 @@
-const templateFunction = require("../src/template");
+const { isABomb } = require("../src/template");
 
-describe("TemplateFunction should return half of the provided", () => {
-  it("2 -> 1 ", () => {
-    expect(templateFunction(2)).toEqual(1);
+describe("You have to clear a board, if step on a bomb you lose", () => {
+  it("A bomb is marked wit an X", () => {
+    expect(isABomb("X")).toBe(true);
+  });
+  it("A space is not a bomb", () => {
+    expect(isABomb(" ")).toBe(false);
   });
 });
