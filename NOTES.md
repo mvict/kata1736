@@ -5,12 +5,11 @@
 'X' -> true ✔️
 ' ' -> false ✔️
 # 🍅 🍅 
-
-#### return the value of a square
+#### Return the value of a square
 [[" ", " ", " "], [" ", "X", " "], [" ", " ", " "]] + [1,1] > X ✔️
 [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]] + [1,1] -> ' ' ✔️
-## Show the board
-### The board is empty when no moves have been done ✔️
+## Show the board. The player sees the board in a legible way
+### Print an empty board ✔️
 [["", "", "", ""]] + [] -> 
 +-+-+-+
 | | | |
@@ -19,12 +18,13 @@
 +-+-+-+
 | | | |
 +-+-+-+
-<!-- ## Board shows the movement of the player
-[[" ", " ", " "], [" ", "X", " "], [" ", " ", " "]] + [1,1] -> 
-+-+-+-+
+
+### Print a board after a movement✔️
+[[" ", " ", " "], [" ", "X", " "], [" ", " ", " "]] = >
+`+-+-+-+
 | | | |
 +-+-+-+
 | |X| |
 +-+-+-+
 | | | |
-+-+-+-+   -->
++-+-+-+`;
