@@ -9,7 +9,6 @@ function isABomb(x) {
 function lookUpSquareInBoard(board, square) {
   return board[square[0]][square[1]];
 }
-
 function showBoard(board) {
   const rowSeparator = "    +-+-+-+\n";
   let finalBoardToPrint = "";
@@ -23,8 +22,26 @@ function showBoard(board) {
   return finalBoardToPrint;
 }
 
+function isFatalMove(board, move) {
+  const content = lookUpSquareInBoard(board, move);
+  return isABomb(content);
+}
+
+function playTheGame(board, firstMove) {
+  let message = "";
+  showBoard(board);
+  if (isFatalMove(board, firstMove)) {
+    message = "Game over!. You lose";
+    console.log("MESSAGE");
+    console.log(message);
+  }
+  return message;
+}
+
 module.exports = {
   isABomb,
   lookUpSquareInBoard,
   showBoard,
+  isFatalMove,
+  playTheGame,
 };

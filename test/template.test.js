@@ -1,4 +1,10 @@
-const { isABomb, lookUpSquareInBoard, showBoard } = require("../src/template");
+const {
+  isABomb,
+  lookUpSquareInBoard,
+  showBoard,
+  isFatalMove,
+  playTheGame,
+} = require("../src/template");
 
 describe("You want to know if its a bomb or not", () => {
   it("A bomb is marked wit an X", () => {
@@ -53,5 +59,30 @@ describe("Player wants to follow the game on the terminal", () => {
     +-+-+-+`;
 
     expect(showBoard(board)).toBe(legibleBoard);
+  });
+});
+
+describe("A players move changes the game", () => {
+  const board = [
+    [" ", " ", " "],
+    [" ", "X", " "],
+    [" ", " ", " "],
+  ];
+  it("The players clears a bomb", () => {
+    expect(isFatalMove(board, [1, 1])).toBe(true);
+  });
+  it("The players clears a fee square", () => {
+    expect(isFatalMove(board, [0, 0])).toBe(false);
+  });
+});
+
+describe("A player wants to know if (s)he loses or not", () => {
+  const board = [
+    [" ", " ", " "],
+    [" ", "X", " "],
+    [" ", " ", " "],
+  ];
+  it("Player loses and gets a defeat message", () => {
+    expect(playTheGame(board, [1, 1])).toEqual("Game over!. You lose");
   });
 });
