@@ -32,7 +32,6 @@ function playTheGame(board, firstMove) {
   showBoard(board);
   if (isFatalMove(board, firstMove)) {
     message = "Game over!. You lose";
-    console.log("MESSAGE");
     console.log(message);
   }
   return message;

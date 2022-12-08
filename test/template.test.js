@@ -6,7 +6,10 @@ const {
   playTheGame,
 } = require("../src/template");
 
-describe("You want to know if its a bomb or not", () => {
+describe(`
+Mine Sweeper Game. A player clears a board without stepping in a square with a bomb.
+
+  Player wants to know what's a bomb`, () => {
   it("A bomb is marked wit an X", () => {
     expect(isABomb("X")).toBe(true);
   });
@@ -14,7 +17,7 @@ describe("You want to know if its a bomb or not", () => {
     expect(isABomb(" ")).toBe(false);
   });
 });
-describe("You want to know what's in a square", () => {
+describe("Player wants to know the content of a square", () => {
   const board = [
     [" ", " ", " "],
     [" ", "X", " "],
@@ -71,7 +74,7 @@ describe("A players move changes the game", () => {
   it("The players clears a bomb", () => {
     expect(isFatalMove(board, [1, 1])).toBe(true);
   });
-  it("The players clears a fee square", () => {
+  it("The players clears a free square", () => {
     expect(isFatalMove(board, [0, 0])).toBe(false);
   });
 });

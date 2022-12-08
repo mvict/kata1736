@@ -39,3 +39,6 @@
 
 ## E2E A player steps in a bomb
 [[" ", " ", " "], [" ", "X", " "], [" ", " ", " "]] + [1, 1]  -> "Game over!. You lose"
+
+# 🍅 🍅 🍅 🍅
+Rewrite messages before presentation so that it reads like a book
